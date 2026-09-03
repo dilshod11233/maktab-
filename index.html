@@ -8,13 +8,13 @@
 
     <title>My School — Dars Jadvali</title>
 
-    <!-- Tailwind -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
     <!-- Lucide Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
 
-    <!-- Font -->
+    <!-- Google Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
@@ -37,100 +37,198 @@
             margin: 0;
             font-family: "Inter", sans-serif;
             color: white;
-
-            background:
-                radial-gradient(
-                    circle at 5% 10%,
-                    rgba(38, 94, 255, .20),
-                    transparent 25%
-                ),
-                radial-gradient(
-                    circle at 95% 20%,
-                    rgba(136, 56, 255, .18),
-                    transparent 25%
-                ),
-                radial-gradient(
-                    circle at 50% 100%,
-                    rgba(0, 205, 255, .10),
-                    transparent 30%
-                ),
-                #030718;
-
-            min-height: 100vh;
+            background: #020617;
             overflow-x: hidden;
         }
 
 
-        /* =========================
-           BACKGROUND GLOW
-        ========================== */
+        /* =========================================
+           MAIN BACKGROUND
+        ========================================= */
 
-        .glow {
+        .page-bg {
+            min-height: 100vh;
+
+            background:
+                radial-gradient(
+                    circle at 10% 10%,
+                    rgba(37, 99, 235, .22),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 90% 15%,
+                    rgba(124, 58, 237, .22),
+                    transparent 28%
+                ),
+
+                radial-gradient(
+                    circle at 50% 100%,
+                    rgba(6, 182, 212, .13),
+                    transparent 30%
+                ),
+
+                #020617;
+        }
+
+
+        /* =========================================
+           GRID BACKGROUND
+        ========================================= */
+
+        .grid-background {
             position: fixed;
-            border-radius: 50%;
+            inset: 0;
+
             pointer-events: none;
-            filter: blur(120px);
-            z-index: -1;
+
+            opacity: .12;
+
+            background-image:
+                linear-gradient(
+                    rgba(148,163,184,.15) 1px,
+                    transparent 1px
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(148,163,184,.15) 1px,
+                    transparent 1px
+                );
+
+            background-size: 60px 60px;
+
+            mask-image:
+                linear-gradient(
+                    to bottom,
+                    black,
+                    transparent 90%
+                );
         }
 
-        .glow-blue {
-            width: 400px;
-            height: 400px;
-            background: #1769ff;
-            top: 5%;
-            left: -200px;
-            opacity: .18;
+
+        /* =========================================
+           FLOATING GLOWS
+        ========================================= */
+
+        .orb {
+            position: fixed;
+
+            border-radius: 50%;
+
+            pointer-events: none;
+
+            filter: blur(100px);
+
+            z-index: 0;
         }
 
-        .glow-purple {
-            width: 450px;
-            height: 450px;
-            background: #8b3dff;
-            top: 40%;
-            right: -220px;
+        .orb-1 {
+            width: 350px;
+            height: 350px;
+
+            background: #2563eb;
+
+            left: -180px;
+            top: 15%;
+
             opacity: .15;
         }
 
-        .glow-cyan {
-            width: 350px;
-            height: 350px;
-            background: #00d9ff;
+        .orb-2 {
+            width: 400px;
+            height: 400px;
+
+            background: #9333ea;
+
+            right: -200px;
+            top: 40%;
+
+            opacity: .14;
+        }
+
+        .orb-3 {
+            width: 300px;
+            height: 300px;
+
+            background: #06b6d4;
+
+            left: 40%;
             bottom: -180px;
-            left: 35%;
+
             opacity: .10;
         }
 
 
-        /* =========================
-           GLASS
-        ========================== */
+        /* =========================================
+           GLASS EFFECT
+        ========================================= */
 
         .glass {
             background:
                 linear-gradient(
                     135deg,
-                    rgba(255,255,255,.075),
+                    rgba(255,255,255,.09),
                     rgba(255,255,255,.025)
                 );
 
-            border: 1px solid rgba(255,255,255,.14);
+            border:
+                1px solid rgba(255,255,255,.13);
 
-            backdrop-filter: blur(25px);
-            -webkit-backdrop-filter: blur(25px);
+            backdrop-filter:
+                blur(28px)
+                saturate(130%);
+
+            -webkit-backdrop-filter:
+                blur(28px)
+                saturate(130%);
 
             box-shadow:
                 inset 0 1px 0 rgba(255,255,255,.12),
-                0 25px 70px rgba(0,0,0,.35);
+                0 25px 80px rgba(0,0,0,.35);
         }
 
 
-        /* =========================
+        /* =========================================
            HEADER
-        ========================== */
+        ========================================= */
+
+        .header {
+            position: relative;
+            z-index: 10;
+        }
+
+        .logo {
+            position: relative;
+
+            width: 48px;
+            height: 48px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 16px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    rgba(96,165,250,.35),
+                    rgba(124,58,237,.25)
+                );
+
+            border:
+                1px solid rgba(147,197,253,.3);
+
+            box-shadow:
+                0 0 35px rgba(59,130,246,.25),
+                inset 0 1px 0 rgba(255,255,255,.2);
+        }
 
         .nav-link {
-            color: #aeb6ca;
-            transition: .3s ease;
+            color: #94a3b8;
+
+            transition:
+                .3s ease;
         }
 
         .nav-link:hover {
@@ -141,44 +239,19 @@
             color: white;
 
             background:
-                linear-gradient(
-                    135deg,
-                    rgba(55,115,255,.35),
-                    rgba(78,70,229,.20)
-                );
+                rgba(59,130,246,.12);
 
-            border: 1px solid rgba(74,126,255,.35);
+            border:
+                1px solid rgba(96,165,250,.2);
 
             box-shadow:
-                0 0 25px rgba(37,99,235,.18),
-                inset 0 1px 0 rgba(255,255,255,.12);
+                0 0 25px rgba(59,130,246,.1);
         }
 
 
-        /* =========================
-           LOGO
-        ========================== */
-
-        .logo-icon {
-            background:
-                radial-gradient(
-                    circle at 35% 30%,
-                    #7da8ff,
-                    #1769ff 50%,
-                    #061b66 100%
-                );
-
-            border: 1px solid rgba(130,170,255,.5);
-
-            box-shadow:
-                0 0 25px rgba(37,99,235,.55),
-                inset 0 1px 4px rgba(255,255,255,.7);
-        }
-
-
-        /* =========================
+        /* =========================================
            HERO
-        ========================== */
+        ========================================= */
 
         .hero {
             position: relative;
@@ -195,117 +268,317 @@
 
             border-radius: 50%;
 
-            background: #4f46e5;
-
-            filter: blur(150px);
-
-            opacity: .10;
-
-            right: -150px;
-            top: -200px;
-        }
-
-        .hero-title {
             background:
-                linear-gradient(
-                    90deg,
-                    #ffffff 5%,
-                    #78a8ff 50%,
-                    #a76bff 100%
+                radial-gradient(
+                    circle,
+                    rgba(59,130,246,.22),
+                    transparent 70%
                 );
 
-            -webkit-background-clip: text;
+            right: -200px;
+            top: -220px;
+        }
+
+        .hero::after {
+            content: "";
+
+            position: absolute;
+
+            width: 350px;
+            height: 350px;
+
+            border-radius: 50%;
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(168,85,247,.15),
+                    transparent 70%
+                );
+
+            left: 30%;
+            bottom: -280px;
+        }
+
+        .gradient-text {
+            background:
+                linear-gradient(
+                    100deg,
+                    #ffffff 10%,
+                    #8ab4ff 45%,
+                    #c084fc 85%
+                );
+
             background-clip: text;
+            -webkit-background-clip: text;
 
             color: transparent;
         }
 
 
-        /* =========================
-           STAT
-        ========================== */
+        /* =========================================
+           HERO ORBIT
+        ========================================= */
 
-        .stat {
-            background: rgba(255,255,255,.045);
+        .orbit {
+            position: relative;
 
-            border: 1px solid rgba(255,255,255,.09);
+            width: 290px;
+            height: 290px;
 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .orbit::before,
+        .orbit::after {
+            content: "";
+
+            position: absolute;
+
+            border-radius: 50%;
+
+            border: 1px solid rgba(96,165,250,.18);
+        }
+
+        .orbit::before {
+            width: 260px;
+            height: 260px;
+
+            transform: rotate(35deg);
+        }
+
+        .orbit::after {
+            width: 210px;
+            height: 210px;
+
+            transform: rotate(-40deg);
+        }
+
+        .orbit-center {
+            width: 120px;
+            height: 120px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 35px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(59,130,246,.25),
+                    rgba(124,58,237,.16)
+                );
+
+            border:
+                1px solid rgba(147,197,253,.25);
+
+            box-shadow:
+                0 0 60px rgba(59,130,246,.22),
+                inset 0 1px 0 rgba(255,255,255,.2);
+
+            z-index: 2;
+        }
+
+        .orbit-icon {
+            position: absolute;
+
+            width: 45px;
+            height: 45px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            background:
+                rgba(15,23,42,.75);
+
+            border:
+                1px solid rgba(255,255,255,.12);
+
+            box-shadow:
+                0 10px 35px rgba(0,0,0,.35);
+        }
+
+        .orbit-icon-1 {
+            top: 10px;
+            left: 45px;
+        }
+
+        .orbit-icon-2 {
+            right: 12px;
+            top: 100px;
+        }
+
+        .orbit-icon-3 {
+            bottom: 15px;
+            right: 70px;
+        }
+
+        .orbit-icon-4 {
+            left: 8px;
+            bottom: 70px;
+        }
+
+
+        /* =========================================
+           STAT CARDS
+        ========================================= */
+
+        .stat-card {
             transition: .3s ease;
         }
 
-        .stat:hover {
-            transform: translateY(-4px);
+        .stat-card:hover {
+            transform: translateY(-5px);
 
             background:
                 rgba(255,255,255,.08);
-
-            border-color:
-                rgba(255,255,255,.17);
         }
 
 
-        /* =========================
+        /* =========================================
            DAY CARD
-        ========================== */
+        ========================================= */
 
         .day-card {
             position: relative;
+
             overflow: hidden;
 
             transition:
-                transform .4s ease,
+                transform .4s cubic-bezier(.2,.8,.2,1),
                 border-color .4s ease,
                 box-shadow .4s ease;
         }
 
+        .day-card::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            border-radius: 50%;
+
+            background: var(--glow);
+
+            filter: blur(80px);
+
+            opacity: .10;
+
+            right: -100px;
+            top: -100px;
+
+            pointer-events: none;
+        }
+
         .day-card:hover {
-            transform: translateY(-8px);
+            transform: translateY(-9px);
 
             border-color:
-                rgba(255,255,255,.27);
+                rgba(255,255,255,.25);
 
             box-shadow:
-                0 30px 80px rgba(0,0,0,.48),
-                inset 0 1px 0 rgba(255,255,255,.17);
+                0 35px 80px rgba(0,0,0,.5),
+                inset 0 1px 0 rgba(255,255,255,.16);
         }
 
 
-        /* =========================
-           LESSON
-        ========================== */
+        /* =========================================
+           DAY HEADER
+        ========================================= */
 
-        .lesson {
+        .day-line {
+            width: 4px;
+            height: 38px;
+
+            border-radius: 20px;
+
+            background: var(--accent);
+
+            box-shadow:
+                0 0 18px var(--accent);
+        }
+
+        .day-number {
+            width: 46px;
+            height: 46px;
+
             display: flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+
+            border-radius: 14px;
+
+            color: #cbd5e1;
+
+            font-size: 13px;
+            font-weight: 700;
+
+            background:
+                rgba(255,255,255,.045);
+
+            border:
+                1px solid rgba(255,255,255,.12);
+        }
+
+
+        /* =========================================
+           LESSON
+        ========================================= */
+
+        .lesson {
+            width: 100%;
+
+            display: flex;
+            align-items: center;
+
+            gap: 11px;
 
             padding: 9px 10px;
 
-            border-radius: 12px;
+            color: #dbe2ef;
+
+            text-align: left;
+
+            border-radius: 13px;
 
             background:
                 rgba(255,255,255,.035);
 
             border:
-                1px solid rgba(255,255,255,.045);
+                1px solid rgba(255,255,255,.055);
 
-            transition: .25s ease;
+            cursor: pointer;
+
+            transition:
+                transform .25s ease,
+                background .25s ease,
+                border-color .25s ease;
         }
 
         .lesson:hover {
+            transform: translateX(5px);
+
             background:
                 rgba(255,255,255,.09);
 
-            transform: translateX(5px);
-
             border-color:
-                rgba(255,255,255,.12);
+                rgba(255,255,255,.13);
         }
 
-
-        /* =========================
-           LESSON ICON
-        ========================== */
+        .lesson:active {
+            transform:
+                translateX(5px)
+                scale(.98);
+        }
 
         .lesson-icon {
             width: 30px;
@@ -319,21 +592,160 @@
 
             border-radius: 9px;
 
+            color: var(--accent);
+
             background:
-                rgba(255,255,255,.07);
+                rgba(255,255,255,.055);
 
             border:
-                1px solid rgba(255,255,255,.10);
+                1px solid rgba(255,255,255,.08);
         }
 
 
-        /* =========================
-           DAY NUMBER
-        ========================== */
+        /* =========================================
+           CARD BIG ICON
+        ========================================= */
 
-        .day-number {
-            width: 48px;
-            height: 48px;
+        .big-icon {
+            width: 100px;
+            height: 100px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            border-radius: 28px;
+
+            color: var(--accent);
+
+            background:
+                radial-gradient(
+                    circle,
+                    rgba(255,255,255,.09),
+                    rgba(255,255,255,.015)
+                );
+
+            border:
+                1px solid rgba(255,255,255,.09);
+
+            box-shadow:
+                inset 0 1px 0 rgba(255,255,255,.12);
+
+            transition:
+                .5s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .day-card:hover .big-icon {
+            transform:
+                translateY(-8px)
+                rotate(3deg)
+                scale(1.05);
+
+            box-shadow:
+                0 0 45px color-mix(
+                    in srgb,
+                    var(--accent) 18%,
+                    transparent
+                );
+        }
+
+
+        /* =========================================
+           MODAL
+        ========================================= */
+
+        .modal {
+            position: fixed;
+
+            inset: 0;
+
+            z-index: 100;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 20px;
+
+            background:
+                rgba(2,6,23,.72);
+
+            backdrop-filter:
+                blur(15px);
+
+            -webkit-backdrop-filter:
+                blur(15px);
+
+            opacity: 0;
+            visibility: hidden;
+
+            transition:
+                opacity .35s ease,
+                visibility .35s ease;
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-card {
+            position: relative;
+
+            width: 100%;
+            max-width: 600px;
+
+            padding: 30px;
+
+            border-radius: 32px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    rgba(18,29,59,.92),
+                    rgba(4,10,29,.94)
+                );
+
+            border:
+                1px solid rgba(255,255,255,.17);
+
+            backdrop-filter:
+                blur(35px);
+
+            -webkit-backdrop-filter:
+                blur(35px);
+
+            box-shadow:
+                0 40px 120px rgba(0,0,0,.65),
+                inset 0 1px 0 rgba(255,255,255,.15);
+
+            transform:
+                translateY(35px)
+                scale(.92);
+
+            transition:
+                .45s cubic-bezier(.2,.8,.2,1);
+        }
+
+        .modal.active .modal-card {
+            transform:
+                translateY(0)
+                scale(1);
+        }
+
+
+        /* =========================================
+           MODAL CLOSE
+        ========================================= */
+
+        .modal-close {
+            position: absolute;
+
+            top: 18px;
+            right: 18px;
+
+            width: 42px;
+            height: 42px;
 
             display: flex;
             align-items: center;
@@ -341,125 +753,150 @@
 
             border-radius: 13px;
 
+            color: #94a3b8;
+
             background:
                 rgba(255,255,255,.055);
 
             border:
-                1px solid rgba(255,255,255,.14);
+                1px solid rgba(255,255,255,.09);
 
-            color: #cbd5e1;
+            cursor: pointer;
 
-            font-size: 17px;
-            font-weight: 700;
+            transition: .3s ease;
+        }
+
+        .modal-close:hover {
+            color: white;
+
+            background:
+                rgba(239,68,68,.14);
+
+            border-color:
+                rgba(248,113,113,.3);
+
+            transform:
+                rotate(90deg);
         }
 
 
-        /* =========================
-           CARD ICON AREA
-        ========================== */
+        /* =========================================
+           MODAL ICON
+        ========================================= */
 
-        .card-icon-box {
-            width: 105px;
-            height: 105px;
+        .modal-icon {
+            width: 76px;
+            height: 76px;
+
+            flex-shrink: 0;
 
             display: flex;
             align-items: center;
             justify-content: center;
 
-            border-radius: 25px;
+            border-radius: 23px;
+
+            color: var(--modal-accent);
 
             background:
-                radial-gradient(
-                    circle,
-                    rgba(255,255,255,.10),
-                    rgba(255,255,255,.015)
+                linear-gradient(
+                    145deg,
+                    rgba(59,130,246,.18),
+                    rgba(124,58,237,.12)
                 );
 
             border:
-                1px solid rgba(255,255,255,.08);
+                1px solid rgba(96,165,250,.22);
 
-            transition: .5s ease;
-        }
+            box-shadow:
+                0 0 40px
+                color-mix(
+                    in srgb,
+                    var(--modal-accent) 16%,
+                    transparent
+                ),
 
-        .day-card:hover .card-icon-box {
-            transform:
-                translateY(-7px)
-                scale(1.04);
-        }
-
-
-        /* =========================
-           ICON GLOW
-        ========================== */
-
-        .icon-blue {
-            color: #60a5fa;
-            filter:
-                drop-shadow(0 0 14px rgba(96,165,250,.8));
-        }
-
-        .icon-purple {
-            color: #c084fc;
-            filter:
-                drop-shadow(0 0 14px rgba(192,132,252,.8));
-        }
-
-        .icon-cyan {
-            color: #22d3ee;
-            filter:
-                drop-shadow(0 0 14px rgba(34,211,238,.8));
-        }
-
-        .icon-green {
-            color: #4ade80;
-            filter:
-                drop-shadow(0 0 14px rgba(74,222,128,.8));
-        }
-
-        .icon-yellow {
-            color: #fbbf24;
-            filter:
-                drop-shadow(0 0 14px rgba(251,191,36,.8));
-        }
-
-        .icon-pink {
-            color: #f472b6;
-            filter:
-                drop-shadow(0 0 14px rgba(244,114,182,.8));
+                inset 0 1px 0
+                rgba(255,255,255,.12);
         }
 
 
-        /* =========================
-           FOOTER
-        ========================== */
+        /* =========================================
+           MODAL INFO
+        ========================================= */
 
-        .footer-icon {
-            width: 45px;
-            height: 45px;
+        .info-box {
+            padding: 18px;
 
-            margin: auto;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            border-radius: 14px;
+            border-radius: 18px;
 
             background:
-                rgba(255,255,255,.06);
+                rgba(255,255,255,.035);
 
             border:
-                1px solid rgba(255,255,255,.10);
+                1px solid rgba(255,255,255,.07);
+        }
+
+        .info-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+
+            margin-bottom: 8px;
+
+            color: #64748b;
+
+            font-size: 10px;
+
+            font-weight: 700;
+
+            text-transform: uppercase;
+
+            letter-spacing: .16em;
         }
 
 
-        /* =========================
+        /* =========================================
+           FOOTER
+        ========================================= */
+
+        .footer {
+            position: relative;
+
+            overflow: hidden;
+        }
+
+        .footer::before {
+            content: "";
+
+            position: absolute;
+
+            width: 250px;
+            height: 250px;
+
+            border-radius: 50%;
+
+            background: #2563eb;
+
+            filter: blur(100px);
+
+            opacity: .08;
+
+            left: 50%;
+            top: 50%;
+
+            transform:
+                translate(-50%, -50%);
+        }
+
+
+        /* =========================================
            MOBILE
-        ========================== */
+        ========================================= */
 
         @media(max-width: 768px) {
 
-            .desktop-menu {
+            .desktop-nav {
                 display: none;
             }
 
@@ -467,8 +904,33 @@
                 display: none;
             }
 
-            .day-card:hover {
-                transform: translateY(-4px);
+            .hero-title {
+                font-size: 48px;
+            }
+
+            .big-icon {
+                width: 78px;
+                height: 78px;
+            }
+
+        }
+
+
+        @media(max-width: 480px) {
+
+            .hero-title {
+                font-size: 40px;
+            }
+
+            .modal-card {
+                padding: 22px;
+
+                border-radius: 25px;
+            }
+
+            .modal-icon {
+                width: 62px;
+                height: 62px;
             }
 
         }
@@ -481,25 +943,29 @@
 <body>
 
 
-    <!-- BACKGROUND -->
+<div class="page-bg">
 
-    <div class="glow glow-blue"></div>
-    <div class="glow glow-purple"></div>
-    <div class="glow glow-cyan"></div>
+    <!-- BACKGROUND EFFECTS -->
+
+    <div class="grid-background"></div>
+
+    <div class="orb orb-1"></div>
+    <div class="orb orb-2"></div>
+    <div class="orb orb-3"></div>
 
 
 
     <main
-        class="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8">
+        class="relative z-[2] max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-6">
 
 
 
-        <!-- =========================
+        <!-- =====================================
              HEADER
-        ========================== -->
+        ====================================== -->
 
         <header
-            class="glass rounded-[25px] px-5 sm:px-7 py-4 mb-8">
+            class="header glass rounded-[25px] px-5 sm:px-7 py-4 mb-7">
 
             <div
                 class="flex items-center justify-between">
@@ -510,8 +976,7 @@
                 <div
                     class="flex items-center gap-3">
 
-                    <div
-                        class="logo-icon w-11 h-11 sm:w-12 sm:h-12 rounded-full flex items-center justify-center">
+                    <div class="logo">
 
                         <i
                             data-lucide="graduation-cap"
@@ -524,13 +989,13 @@
                     <div>
 
                         <h2
-                            class="font-bold text-base sm:text-lg">
+                            class="font-bold text-lg">
                             My School
                         </h2>
 
                         <p
-                            class="text-[11px] sm:text-xs text-blue-300">
-                            Bilim — kelajak kaliti
+                            class="text-[10px] text-blue-300 uppercase tracking-widest">
+                            Education Platform
                         </p>
 
                     </div>
@@ -539,54 +1004,36 @@
 
 
 
-                <!-- NAV -->
+                <!-- NAVIGATION -->
 
                 <nav
-                    class="desktop-menu flex items-center gap-1">
+                    class="desktop-nav flex items-center gap-1">
 
                     <a
                         href="#home"
-                        class="nav-link nav-active rounded-xl px-5 py-3 text-sm font-medium">
+                        class="nav-link nav-active px-5 py-3 rounded-xl text-sm">
                         Bosh sahifa
                     </a>
 
                     <a
                         href="#jadval"
-                        class="nav-link rounded-xl px-5 py-3 text-sm font-medium">
-                        Jadval
+                        class="nav-link px-5 py-3 rounded-xl text-sm">
+                        Dars jadvali
                     </a>
-
-                    <a
-                        href="#fanlar"
-                        class="nav-link rounded-xl px-5 py-3 text-sm font-medium">
-                        Fanlar
-                    </a>
-
-                    <a
-                        href="#yangiliklar"
-                        class="nav-link rounded-xl px-5 py-3 text-sm font-medium">
-                        Yangiliklar
-                    </a>
-
-                    <a
-                        href="#aloqa"
-                        class="nav-link rounded-xl px-5 py-3 text-sm font-medium">
-                        Aloqa
-                    </a>
-
                 </nav>
 
 
 
-                <!-- BUTTON -->
+                <!-- HEADER ACTION -->
 
                 <button
                     class="hidden sm:flex items-center gap-2
-                    rounded-xl px-4 py-3
-                    text-sm font-semibold
-                    bg-purple-500/15
-                    border border-purple-400/25
-                    hover:bg-purple-500/25
+                    px-4 py-3 rounded-xl
+                    bg-blue-500/10
+                    border border-blue-400/20
+                    text-blue-300
+                    text-sm
+                    hover:bg-blue-500/20
                     transition">
 
                     <i
@@ -594,7 +1041,7 @@
                         class="w-4 h-4">
                     </i>
 
-                    Haftalik jadval
+                    2026 / 2027
 
                 </button>
 
@@ -604,61 +1051,70 @@
 
 
 
-        <!-- =========================
+        <!-- =====================================
              HERO
-        ========================== -->
+        ====================================== -->
 
         <section
             id="home"
-            class="glass hero rounded-[30px] mb-7">
+            class="hero glass rounded-[32px] mb-7">
 
             <div
-                class="relative z-10 grid lg:grid-cols-2 gap-8 items-center
-                px-6 sm:px-10 lg:px-12 py-10 sm:py-12">
+                class="relative z-[2]
+                grid lg:grid-cols-2
+                items-center gap-10
+                px-6 sm:px-10 lg:px-14
+                py-10 sm:py-14">
 
 
-                <!-- TEXT -->
+                <!-- HERO CONTENT -->
 
                 <div>
 
                     <div
                         class="inline-flex items-center gap-2
-                        px-4 py-2 rounded-full
-                        bg-white/[.045]
+                        px-4 py-2
+                        rounded-full
+                        bg-white/[.04]
                         border border-white/10
-                        text-purple-300
-                        text-xs sm:text-sm
-                        mb-5">
+                        text-blue-300
+                        text-xs
+                        mb-6">
 
                         <span
                             class="w-2 h-2 rounded-full
-                            bg-purple-400
-                            shadow-[0_0_12px_#a78bfa]">
+                            bg-blue-400
+                            shadow-[0_0_15px_#60a5fa]">
                         </span>
 
-                        2026 / 2027 O‘quv yili
+                        Haftalik ta'lim tizimi
 
                     </div>
 
 
                     <h1
-                        class="hero-title
+                        class="gradient-text
                         text-5xl sm:text-6xl lg:text-7xl
                         font-extrabold
-                        tracking-tight
-                        leading-none">
+                        leading-[.95]
+                        tracking-tight">
 
-                        Dars Jadvali
+                        Dars
+                        <br>
+                        Jadvali
 
                     </h1>
 
 
                     <p
-                        class="text-gray-400 mt-5 max-w-xl
-                        text-sm sm:text-base leading-7">
+                        class="mt-6 max-w-xl
+                        text-sm sm:text-base
+                        leading-7
+                        text-slate-400">
 
-                        Haftaning har bir kuni — yangi bilim,
-                        yangi imkoniyat va yangi maqsad.
+                        Har bir kuningizni oldindan rejalashtiring.
+                        Fanlar, darslar va bilimlar bir joyda —
+                        zamonaviy va qulay ko‘rinishda.
 
                     </p>
 
@@ -667,31 +1123,35 @@
                     <!-- STATS -->
 
                     <div
-                        class="flex flex-wrap gap-3 mt-7">
+                        class="flex flex-wrap gap-3 mt-8">
 
 
                         <div
-                            class="stat rounded-2xl px-5 py-3
+                            class="stat-card glass
+                            rounded-2xl
+                            px-5 py-3
                             flex items-center gap-3">
 
                             <div
                                 class="text-blue-400">
 
                                 <i
-                                    data-lucide="book-open"
-                                    class="w-7 h-7">
+                                    data-lucide="calendar-range"
+                                    class="w-6 h-6">
                                 </i>
 
                             </div>
 
                             <div>
 
-                                <p class="text-xl font-bold">
+                                <p
+                                    class="font-bold text-lg">
                                     6
                                 </p>
 
-                                <p class="text-xs text-gray-500">
-                                    Kun
+                                <p
+                                    class="text-[10px] text-slate-500">
+                                    KUN
                                 </p>
 
                             </div>
@@ -701,27 +1161,31 @@
 
 
                         <div
-                            class="stat rounded-2xl px-5 py-3
+                            class="stat-card glass
+                            rounded-2xl
+                            px-5 py-3
                             flex items-center gap-3">
 
                             <div
                                 class="text-purple-400">
 
                                 <i
-                                    data-lucide="calendar-days"
-                                    class="w-7 h-7">
+                                    data-lucide="book-open"
+                                    class="w-6 h-6">
                                 </i>
 
                             </div>
 
                             <div>
 
-                                <p class="text-xl font-bold">
+                                <p
+                                    class="font-bold text-lg">
                                     28
                                 </p>
 
-                                <p class="text-xs text-gray-500">
-                                    Dars
+                                <p
+                                    class="text-[10px] text-slate-500">
+                                    DARSLAR
                                 </p>
 
                             </div>
@@ -731,110 +1195,114 @@
 
 
                         <div
-                            class="stat rounded-2xl px-5 py-3
+                            class="stat-card glass
+                            rounded-2xl
+                            px-5 py-3
                             flex items-center gap-3">
 
                             <div
-                                class="text-yellow-400">
+                                class="text-cyan-400">
 
                                 <i
-                                    data-lucide="star"
-                                    class="w-7 h-7">
+                                    data-lucide="layers"
+                                    class="w-6 h-6">
                                 </i>
 
                             </div>
 
                             <div>
 
-                                <p class="text-xl font-bold">
+                                <p
+                                    class="font-bold text-lg">
                                     14+
                                 </p>
 
-                                <p class="text-xs text-gray-500">
-                                    Fanlar
+                                <p
+                                    class="text-[10px] text-slate-500">
+                                    FANLAR
                                 </p>
 
                             </div>
 
                         </div>
 
+
                     </div>
 
                 </div>
 
 
 
-                <!-- HERO ICON VISUAL -->
+                <!-- HERO VISUAL -->
 
                 <div
                     class="hero-visual
-                    relative h-[270px]
                     flex items-center justify-center">
 
 
-                    <div
-                        class="absolute
-                        w-60 h-60
-                        rounded-full
-                        border border-blue-400/20
-                        shadow-[0_0_80px_rgba(59,130,246,.2)]">
+                    <div class="orbit">
+
+
+                        <div class="orbit-center">
+
+                            <i
+                                data-lucide="graduation-cap"
+                                class="w-16 h-16
+                                text-blue-400
+                                drop-shadow-[0_0_20px_rgba(96,165,250,.8)]">
+                            </i>
+
+                        </div>
+
+
+                        <div
+                            class="orbit-icon orbit-icon-1
+                            text-blue-400">
+
+                            <i
+                                data-lucide="monitor"
+                                class="w-5 h-5">
+                            </i>
+
+                        </div>
+
+
+                        <div
+                            class="orbit-icon orbit-icon-2
+                            text-purple-400">
+
+                            <i
+                                data-lucide="atom"
+                                class="w-5 h-5">
+                            </i>
+
+                        </div>
+
+
+                        <div
+                            class="orbit-icon orbit-icon-3
+                            text-cyan-400">
+
+                            <i
+                                data-lucide="globe-2"
+                                class="w-5 h-5">
+                            </i>
+
+                        </div>
+
+
+                        <div
+                            class="orbit-icon orbit-icon-4
+                            text-yellow-400">
+
+                            <i
+                                data-lucide="calculator"
+                                class="w-5 h-5">
+                            </i>
+
+                        </div>
 
                     </div>
-
-
-                    <div
-                        class="absolute
-                        w-44 h-44
-                        rounded-full
-                        border border-purple-400/20">
-
-                    </div>
-
-
-                    <div
-                        class="relative z-10
-                        w-32 h-32
-                        rounded-[30px]
-                        glass
-                        flex items-center justify-center
-                        shadow-[0_0_60px_rgba(59,130,246,.25)]">
-
-                        <i
-                            data-lucide="graduation-cap"
-                            class="w-20 h-20 text-blue-400
-                            drop-shadow-[0_0_20px_rgba(96,165,250,.8)]">
-                        </i>
-
-                    </div>
-
-
-                    <i
-                        data-lucide="atom"
-                        class="absolute top-5 right-[25%]
-                        w-9 h-9 text-purple-400
-                        opacity-70">
-                    </i>
-
-                    <i
-                        data-lucide="book-open"
-                        class="absolute bottom-10 left-[20%]
-                        w-8 h-8 text-cyan-400
-                        opacity-60">
-                    </i>
-
-                    <i
-                        data-lucide="lightbulb"
-                        class="absolute top-20 left-[15%]
-                        w-7 h-7 text-yellow-400
-                        opacity-60">
-                    </i>
-
-                    <i
-                        data-lucide="globe-2"
-                        class="absolute bottom-8 right-[15%]
-                        w-8 h-8 text-green-400
-                        opacity-60">
-                    </i>
 
                 </div>
 
@@ -844,625 +1312,58 @@
 
 
 
-        <!-- =========================
+        <!-- =====================================
              DAYS GRID
-        ========================== -->
+        ====================================== -->
 
         <section
             id="jadval"
-            class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5">
-
-
-
-            <!-- DUSHANBA -->
-
-            <article
-                class="glass day-card rounded-[25px] p-5">
-
-                <div
-                    class="flex items-start justify-between mb-5">
-
-                    <div>
-
-                        <div
-                            class="w-1 h-8 rounded-full
-                            bg-blue-400
-                            shadow-[0_0_15px_#60a5fa]
-                            mb-3">
-                        </div>
-
-                        <p
-                            class="text-blue-400 text-xs
-                            font-semibold uppercase tracking-wider">
-                            Dushanba
-                        </p>
-
-                    </div>
-
-                    <div class="day-number">
-                        01
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="grid grid-cols-[1fr_105px]
-                    gap-3 items-end">
-
-                    <div class="space-y-2">
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-blue-400">
-                                <i data-lucide="sparkles" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Kelajak soati</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-blue-400">
-                                <i data-lucide="monitor" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Informatika</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-blue-400">
-                                <i data-lucide="calculator" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Matematika</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-blue-400">
-                                <i data-lucide="languages" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Rus tili</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-blue-400">
-                                <i data-lucide="book-text" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Ona tili</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-blue-400">
-                                <i data-lucide="book-open" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Adabiyot</span>
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        class="card-icon-box text-blue-400">
-
-                        <i
-                            data-lucide="laptop"
-                            class="w-16 h-16 icon-blue">
-                        </i>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- SESHANBA -->
-
-            <article
-                class="glass day-card rounded-[25px] p-5">
-
-                <div
-                    class="flex items-start justify-between mb-5">
-
-                    <div>
-
-                        <div
-                            class="w-1 h-8 rounded-full
-                            bg-purple-400
-                            shadow-[0_0_15px_#c084fc]
-                            mb-3">
-                        </div>
-
-                        <p
-                            class="text-purple-400 text-xs
-                            font-semibold uppercase tracking-wider">
-                            Seshanba
-                        </p>
-
-                    </div>
-
-                    <div class="day-number">
-                        02
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="grid grid-cols-[1fr_105px]
-                    gap-3 items-end">
-
-                    <div class="space-y-2">
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-purple-400">
-                                <i data-lucide="atom" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Fizika</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-purple-400">
-                                <i data-lucide="accessibility" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Jismoniy</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-purple-400">
-                                <i data-lucide="landmark" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Tarix</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-purple-400">
-                                <i data-lucide="calculator" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Matematika</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-purple-400">
-                                <i data-lucide="languages" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Ingliz tili</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-purple-400">
-                                <i data-lucide="flask-conical" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Kimyo</span>
-                        </div>
-
-                    </div>
-
-
-                    <div
-                        class="card-icon-box">
-
-                        <i
-                            data-lucide="atom"
-                            class="w-16 h-16 icon-purple">
-                        </i>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- CHORSHANBA -->
-
-            <article
-                class="glass day-card rounded-[25px] p-5">
-
-                <div
-                    class="flex items-start justify-between mb-5">
-
-                    <div>
-
-                        <div
-                            class="w-1 h-8 rounded-full
-                            bg-cyan-400
-                            shadow-[0_0_15px_#22d3ee]
-                            mb-3">
-                        </div>
-
-                        <p
-                            class="text-cyan-400 text-xs
-                            font-semibold uppercase tracking-wider">
-                            Chorshanba
-                        </p>
-
-                    </div>
-
-                    <div class="day-number">
-                        03
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="grid grid-cols-[1fr_105px]
-                    gap-3 items-end">
-
-                    <div class="space-y-2">
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-cyan-400">
-                                <i data-lucide="scale" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Huquq</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-cyan-400">
-                                <i data-lucide="settings" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Texnologiya</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-cyan-400">
-                                <i data-lucide="calculator" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Matematika</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-cyan-400">
-                                <i data-lucide="compass" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Chizmachilik</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-cyan-400">
-                                <i data-lucide="languages" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Rus tili</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-cyan-400">
-                                <i data-lucide="languages" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Ingliz tili</span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="card-icon-box">
-
-                        <i
-                            data-lucide="compass"
-                            class="w-16 h-16 icon-cyan">
-                        </i>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- PAYSHANBA -->
-
-            <article
-                class="glass day-card rounded-[25px] p-5">
-
-                <div
-                    class="flex items-start justify-between mb-5">
-
-                    <div>
-
-                        <div
-                            class="w-1 h-8 rounded-full
-                            bg-green-400
-                            shadow-[0_0_15px_#4ade80]
-                            mb-3">
-                        </div>
-
-                        <p
-                            class="text-green-400 text-xs
-                            font-semibold uppercase tracking-wider">
-                            Payshanba
-                        </p>
-
-                    </div>
-
-                    <div class="day-number">
-                        04
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="grid grid-cols-[1fr_105px]
-                    gap-3 items-end">
-
-                    <div class="space-y-2">
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-green-400">
-                                <i data-lucide="map" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Geografiya</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-green-400">
-                                <i data-lucide="heart-handshake" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Tarbiya</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-green-400">
-                                <i data-lucide="dna" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Biologiya</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-green-400">
-                                <i data-lucide="languages" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Ingliz tili</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-green-400">
-                                <i data-lucide="dumbbell" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Jismoniy</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-green-400">
-                                <i data-lucide="landmark" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Tarix</span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="card-icon-box">
-
-                        <i
-                            data-lucide="globe-2"
-                            class="w-16 h-16 icon-green">
-                        </i>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- JUMA -->
-
-            <article
-                class="glass day-card rounded-[25px] p-5">
-
-                <div
-                    class="flex items-start justify-between mb-5">
-
-                    <div>
-
-                        <div
-                            class="w-1 h-8 rounded-full
-                            bg-yellow-400
-                            shadow-[0_0_15px_#fbbf24]
-                            mb-3">
-                        </div>
-
-                        <p
-                            class="text-yellow-400 text-xs
-                            font-semibold uppercase tracking-wider">
-                            Juma
-                        </p>
-
-                    </div>
-
-                    <div class="day-number">
-                        05
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="grid grid-cols-[1fr_105px]
-                    gap-3 items-end">
-
-                    <div class="space-y-2">
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-yellow-400">
-                                <i data-lucide="book-open" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Adabiyot</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-yellow-400">
-                                <i data-lucide="landmark" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Tarix</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-yellow-400">
-                                <i data-lucide="dna" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Biologiya</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-yellow-400">
-                                <i data-lucide="calculator" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Matematika</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-yellow-400">
-                                <i data-lucide="book-text" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Ona tili</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-yellow-400">
-                                <i data-lucide="flask-conical" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Kimyo</span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="card-icon-box">
-
-                        <i
-                            data-lucide="book-open"
-                            class="w-16 h-16 icon-yellow">
-                        </i>
-
-                    </div>
-
-                </div>
-
-            </article>
-
-
-
-            <!-- SHANBA -->
-
-            <article
-                class="glass day-card rounded-[25px] p-5">
-
-                <div
-                    class="flex items-start justify-between mb-5">
-
-                    <div>
-
-                        <div
-                            class="w-1 h-8 rounded-full
-                            bg-pink-400
-                            shadow-[0_0_15px_#f472b6]
-                            mb-3">
-                        </div>
-
-                        <p
-                            class="text-pink-400 text-xs
-                            font-semibold uppercase tracking-wider">
-                            Shanba
-                        </p>
-
-                    </div>
-
-                    <div class="day-number">
-                        06
-                    </div>
-
-                </div>
-
-
-                <div
-                    class="grid grid-cols-[1fr_105px]
-                    gap-3 items-end">
-
-                    <div class="space-y-2">
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-pink-400">
-                                <i data-lucide="map" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Geografiya</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-pink-400">
-                                <i data-lucide="atom" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Fizika</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-pink-400">
-                                <i data-lucide="calculator" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Matematika</span>
-                        </div>
-
-                        <div class="lesson">
-                            <span class="lesson-icon text-pink-400">
-                                <i data-lucide="book-text" class="w-4 h-4"></i>
-                            </span>
-                            <span class="text-sm">Ona tili</span>
-                        </div>
-
-                    </div>
-
-
-                    <div class="card-icon-box">
-
-                        <i
-                            data-lucide="backpack"
-                            class="w-16 h-16 icon-pink">
-                        </i>
-
-                    </div>
-
-                </div>
-
-            </article>
-
+            class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-5"
+            id="scheduleGrid">
 
         </section>
 
 
 
-        <!-- =========================
+        <!-- =====================================
              FOOTER
-        ========================== -->
+        ====================================== -->
 
         <footer
-            class="glass rounded-[25px]
-            mt-7 px-6 sm:px-10 py-7 text-center">
+            class="footer glass rounded-[28px]
+            mt-7 py-8 px-6 text-center">
 
-            <div class="footer-icon text-blue-400 mb-4">
+            <div
+                class="relative z-[2]">
 
-                <i
-                    data-lucide="graduation-cap"
-                    class="w-6 h-6">
-                </i>
+                <div
+                    class="w-12 h-12 mx-auto mb-4
+                    rounded-2xl
+                    flex items-center justify-center
+                    bg-blue-500/10
+                    border border-blue-400/20
+                    text-blue-400">
+
+                    <i
+                        data-lucide="graduation-cap"
+                        class="w-6 h-6">
+                    </i>
+
+                </div>
+
+
+                <h3
+                    class="font-semibold text-lg">
+                    My School
+                </h3>
+
+
+                <p
+                    class="text-sm text-slate-500 mt-2">
+                    Bilim — kelajak sari eng katta qadam.
+                </p>
 
             </div>
-
-            <p
-                class="text-gray-300 text-sm sm:text-base italic">
-
-                “Ta’lim — kelajak sari ochiladigan eng katta eshik.”
-
-            </p>
-
-            <p
-                class="text-blue-400 text-xs mt-3 font-semibold">
-
-                — My School
-
-            </p>
 
         </footer>
 
@@ -1471,11 +1372,849 @@
 
 
 
-    <!-- ICONS -->
+    <!-- =========================================
+         SUBJECT MODAL
+    ========================================== -->
+
+    <div
+        id="subjectModal"
+        class="modal">
+
+        <div
+            id="modalCard"
+            class="modal-card">
+
+
+            <!-- CLOSE -->
+
+            <button
+                id="closeModal"
+                class="modal-close">
+
+                <i
+                    data-lucide="x"
+                    class="w-5 h-5">
+                </i>
+
+            </button>
+
+
+
+            <!-- MODAL HEADER -->
+
+            <div
+                class="flex items-center gap-4 pr-12">
+
+
+                <div
+                    id="modalIcon"
+                    class="modal-icon">
+
+                    <i
+                        data-lucide="book-open"
+                        class="w-8 h-8">
+                    </i>
+
+                </div>
+
+
+                <div>
+
+                    <p
+                        class="text-[10px]
+                        uppercase
+                        tracking-[.18em]
+                        text-blue-400
+                        mb-1">
+
+                        Fan haqida
+
+                    </p>
+
+
+                    <h2
+                        id="modalTitle"
+                        class="text-2xl sm:text-3xl
+                        font-bold">
+
+                        Fan nomi
+
+                    </h2>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- DESCRIPTION -->
+
+            <div
+                class="info-box mt-7">
+
+                <div
+                    class="info-label">
+
+                    <i
+                        data-lucide="info"
+                        class="w-4 h-4">
+                    </i>
+
+                    Fan haqida
+
+                </div>
+
+
+                <p
+                    id="modalDescription"
+                    class="text-sm
+                    leading-7
+                    text-slate-300">
+
+                </p>
+
+            </div>
+
+
+
+            <!-- LEARN -->
+
+            <div
+                class="info-box mt-3">
+
+                <div
+                    class="info-label">
+
+                    <i
+                        data-lucide="brain"
+                        class="w-4 h-4">
+                    </i>
+
+                    Ushbu fandan
+
+                </div>
+
+
+                <p
+                    id="modalLearn"
+                    class="text-sm
+                    leading-7
+                    text-slate-300">
+
+                </p>
+
+            </div>
+
+
+
+            <!-- MODAL FOOTER -->
+
+            <div
+                class="flex items-center justify-between
+                gap-4 mt-6
+                pt-5
+                border-t border-white/[.07]">
+
+
+                <div
+                    class="flex items-center gap-2
+                    text-xs
+                    text-slate-500">
+
+                    <i
+                        data-lucide="mouse-pointer-2"
+                        class="w-4 h-4">
+                    </i>
+
+                    Fan ustiga bosildi
+
+                </div>
+
+
+                <button
+                    id="closeModalBottom"
+                    class="px-5 py-2.5
+                    rounded-xl
+                    bg-blue-500/10
+                    border border-blue-400/20
+                    text-blue-300
+                    text-sm
+                    font-semibold
+                    hover:bg-blue-500/20
+                    transition">
+
+                    Yopish
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
 
     <script>
+
+
+        /* =========================================
+           DARS JADVALI
+        ========================================== */
+
+        const schedule = [
+
+            {
+                day: "Dushanba",
+                number: "01",
+                color: "#60a5fa",
+                glow: "#2563eb",
+                icon: "laptop",
+
+                lessons: [
+                    ["Kelajak soati", "sparkles", "kelajak-soati"],
+                    ["Informatika", "monitor", "informatika"],
+                    ["Matematika", "calculator", "matematika"],
+                    ["Rus tili", "languages", "rus-tili"],
+                    ["Ona tili", "book-text", "ona-tili"],
+                    ["Adabiyot", "book-open", "adabiyot"]
+                ]
+            },
+
+
+            {
+                day: "Seshanba",
+                number: "02",
+                color: "#c084fc",
+                glow: "#9333ea",
+                icon: "atom",
+
+                lessons: [
+                    ["Fizika", "atom", "fizika"],
+                    ["Jismoniy", "dumbbell", "jismoniy"],
+                    ["Tarix", "landmark", "tarix"],
+                    ["Matematika", "calculator", "matematika"],
+                    ["Ingliz tili", "languages", "ingliz-tili"],
+                    ["Kimyo", "flask-conical", "kimyo"]
+                ]
+            },
+
+
+            {
+                day: "Chorshanba",
+                number: "03",
+                color: "#22d3ee",
+                glow: "#0891b2",
+                icon: "compass",
+
+                lessons: [
+                    ["Huquq", "scale", "huquq"],
+                    ["Texnologiya", "settings", "texnologiya"],
+                    ["Matematika", "calculator", "matematika"],
+                    ["Chizmachilik", "compass", "chizmachilik"],
+                    ["Rus tili", "languages", "rus-tili"],
+                    ["Ingliz tili", "languages", "ingliz-tili"]
+                ]
+            },
+
+
+            {
+                day: "Payshanba",
+                number: "04",
+                color: "#4ade80",
+                glow: "#16a34a",
+                icon: "globe-2",
+
+                lessons: [
+                    ["Geografiya", "map", "geografiya"],
+                    ["Tarbiya", "heart-handshake", "tarbiya"],
+                    ["Biologiya", "dna", "biologiya"],
+                    ["Ingliz tili", "languages", "ingliz-tili"],
+                    ["Jismoniy", "dumbbell", "jismoniy"],
+                    ["Tarix", "landmark", "tarix"]
+                ]
+            },
+
+
+            {
+                day: "Juma",
+                number: "05",
+                color: "#fbbf24",
+                glow: "#d97706",
+                icon: "book-open",
+
+                lessons: [
+                    ["Adabiyot", "book-open", "adabiyot"],
+                    ["Tarix", "landmark", "tarix"],
+                    ["Biologiya", "dna", "biologiya"],
+                    ["Matematika", "calculator", "matematika"],
+                    ["Ona tili", "book-text", "ona-tili"],
+                    ["Kimyo", "flask-conical", "kimyo"]
+                ]
+            },
+
+
+            {
+                day: "Shanba",
+                number: "06",
+                color: "#f472b6",
+                glow: "#db2777",
+                icon: "backpack",
+
+                lessons: [
+                    ["Geografiya", "map", "geografiya"],
+                    ["Fizika", "atom", "fizika"],
+                    ["Matematika", "calculator", "matematika"],
+                    ["Ona tili", "book-text", "ona-tili"]
+                ]
+            }
+
+        ];
+
+
+
+        /* =========================================
+           FANLAR MA'LUMOTI
+        ========================================== */
+
+        const subjects = {
+
+            "kelajak-soati": {
+                title: "Kelajak soati",
+                icon: "sparkles",
+                color: "#60a5fa",
+                description:
+                    "Kelajak soati o‘quvchilarga kelajakdagi imkoniyatlar, zamonaviy kasblar, texnologiyalar va shaxsiy rivojlanish haqida tushuncha beradi.",
+                learn:
+                    "Maqsad qo‘yish, kelajak kasblari, zamonaviy texnologiyalar va hayotda kerak bo‘ladigan muhim ko‘nikmalarni o‘rganasiz."
+            },
+
+
+            "informatika": {
+                title: "Informatika",
+                icon: "monitor",
+                color: "#60a5fa",
+                description:
+                    "Informatika kompyuterlar, axborot texnologiyalari, algoritmlar va dasturlash asoslarini o‘rgatuvchi fan.",
+                learn:
+                    "Algoritm, dasturlash, kompyuter tizimlari va raqamli texnologiyalar bilan ishlashni o‘rganasiz."
+            },
+
+
+            "matematika": {
+                title: "Matematika",
+                icon: "calculator",
+                color: "#60a5fa",
+                description:
+                    "Matematika mantiqiy fikrlash, hisoblash va muammolarni aniq yechish qobiliyatini rivojlantiradi.",
+                learn:
+                    "Tenglamalar, formulalar, sonlar, geometriya va mantiqiy masalalarni yechishni o‘rganasiz."
+            },
+
+
+            "rus-tili": {
+                title: "Rus tili",
+                icon: "languages",
+                color: "#60a5fa",
+                description:
+                    "Rus tili grammatikasi, so‘z boyligi, imlo va to‘g‘ri nutq tuzilishini o‘rgatadi.",
+                learn:
+                    "Grammatika, yangi so‘zlar, imlo va rus tilida to‘g‘ri yozish hamda gapirishni o‘rganasiz."
+            },
+
+
+            "ona-tili": {
+                title: "Ona tili",
+                icon: "book-text",
+                color: "#60a5fa",
+                description:
+                    "Ona tili o‘zbek tilining grammatikasi, imlo qoidalari va nutq madaniyatini o‘rganishga yordam beradi.",
+                learn:
+                    "So‘z turkumlari, gap tuzilishi, imlo qoidalari va chiroyli nutq tuzishni o‘rganasiz."
+            },
+
+
+            "adabiyot": {
+                title: "Adabiyot",
+                icon: "book-open",
+                color: "#fbbf24",
+                description:
+                    "Adabiyot badiiy asarlar, ijodkorlar va inson tafakkurining turli ko‘rinishlarini o‘rganadi.",
+                learn:
+                    "Shoir va yozuvchilar ijodi, badiiy asarlar va adabiy tahlil asoslarini o‘rganasiz."
+            },
+
+
+            "fizika": {
+                title: "Fizika",
+                icon: "atom",
+                color: "#c084fc",
+                description:
+                    "Fizika tabiatdagi hodisalar, harakat, kuch, energiya, elektr va boshqa fizik jarayonlarni o‘rganadi.",
+                learn:
+                    "Kuch, harakat, energiya, elektr, yorug‘lik va fizik qonunlarni o‘rganasiz."
+            },
+
+
+            "jismoniy": {
+                title: "Jismoniy tarbiya",
+                icon: "dumbbell",
+                color: "#4ade80",
+                description:
+                    "Jismoniy tarbiya sport, harakat faolligi va sog‘lom turmush tarziga oid bilim hamda ko‘nikmalarni rivojlantiradi.",
+                learn:
+                    "Sport mashqlari, chaqqonlik, jismoniy faollik va jamoaviy sport ko‘nikmalarini rivojlantirasiz."
+            },
+
+
+            "tarix": {
+                title: "Tarix",
+                icon: "landmark",
+                color: "#fbbf24",
+                description:
+                    "Tarix insoniyat, davlatlar, xalqlar va muhim tarixiy voqealarning rivojlanishini o‘rganadi.",
+                learn:
+                    "Tarixiy voqealar, davlatlar, buyuk shaxslar va muhim tarixiy jarayonlarni o‘rganasiz."
+            },
+
+
+            "ingliz-tili": {
+                title: "Ingliz tili",
+                icon: "languages",
+                color: "#c084fc",
+                description:
+                    "Ingliz tili xalqaro muloqot va zamonaviy ta’lim uchun muhim bo‘lgan tilni o‘rganishga yordam beradi.",
+                learn:
+                    "So‘z boyligi, grammatika, o‘qish, yozish, tinglash va ingliz tilida muloqot qilishni o‘rganasiz."
+            },
+
+
+            "kimyo": {
+                title: "Kimyo",
+                icon: "flask-conical",
+                color: "#c084fc",
+                description:
+                    "Kimyo moddalar, ularning xususiyatlari va ular o‘rtasida sodir bo‘ladigan reaksiyalarni o‘rganadi.",
+                learn:
+                    "Kimyoviy elementlar, formulalar, moddalar va kimyoviy reaksiyalarni o‘rganasiz."
+            },
+
+
+            "huquq": {
+                title: "Huquq",
+                icon: "scale",
+                color: "#22d3ee",
+                description:
+                    "Huquq jamiyatdagi qonunlar, inson huquqlari va fuqarolarning majburiyatlarini o‘rganadi.",
+                learn:
+                    "Huquq va majburiyatlar, qonunlar, huquqiy madaniyat va fuqarolik mas’uliyatini o‘rganasiz."
+            },
+
+
+            "texnologiya": {
+                title: "Texnologiya",
+                icon: "settings",
+                color: "#22d3ee",
+                description:
+                    "Texnologiya amaliy ishlar, zamonaviy texnik jarayonlar va turli buyumlarni yaratish asoslarini o‘rgatadi.",
+                learn:
+                    "Materiallar bilan ishlash, amaliy loyihalar va texnik jarayonlarni o‘rganasiz."
+            },
+
+
+            "chizmachilik": {
+                title: "Chizmachilik",
+                icon: "compass",
+                color: "#22d3ee",
+                description:
+                    "Chizmachilik texnik chizmalar, geometrik shakllar va grafik tasvirlarni aniq bajarishni o‘rgatadi.",
+                learn:
+                    "Texnik chizmalar, o‘lchamlar, geometrik shakllar va grafik tasvirlarni o‘rganasiz."
+            },
+
+
+            "geografiya": {
+                title: "Geografiya",
+                icon: "map",
+                color: "#4ade80",
+                description:
+                    "Geografiya Yer sayyorasi, qit’alar, mamlakatlar, tabiat va iqlim jarayonlarini o‘rganadi.",
+                learn:
+                    "Xaritalar, davlatlar, qit’alar, iqlim va Yer yuzidagi tabiiy jarayonlarni o‘rganasiz."
+            },
+
+
+            "tarbiya": {
+                title: "Tarbiya",
+                icon: "heart-handshake",
+                color: "#4ade80",
+                description:
+                    "Tarbiya insoniy qadriyatlar, odob, mas’uliyat va jamiyatdagi to‘g‘ri xulq haqida bilim beradi.",
+                learn:
+                    "Hurmat, mas’uliyat, odob-axloq va ijtimoiy munosabatlarni o‘rganasiz."
+            },
+
+
+            "biologiya": {
+                title: "Biologiya",
+                icon: "dna",
+                color: "#4ade80",
+                description:
+                    "Biologiya tirik organizmlar, inson, hayvonlar, o‘simliklar va tabiatdagi hayot jarayonlarini o‘rganadi.",
+                learn:
+                    "Hujayra, inson organizmi, o‘simliklar, hayvonlar va tirik organizmlar haqida bilim olasiz."
+            }
+
+        };
+
+
+
+        /* =========================================
+           GRIDNI YARATISH
+        ========================================== */
+
+        const scheduleGrid =
+            document.getElementById("jadval");
+
+
+        schedule.forEach(day => {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "glass day-card rounded-[27px] p-5";
+
+            card.style.setProperty(
+                "--accent",
+                day.color
+            );
+
+            card.style.setProperty(
+                "--glow",
+                day.glow
+            );
+
+
+            let lessonsHTML = "";
+
+
+            day.lessons.forEach(
+                ([name, icon, key]) => {
+
+                    lessonsHTML += `
+
+                        <button
+                            type="button"
+                            class="lesson"
+                            data-subject="${key}"
+                            style="--accent:${day.color}">
+
+                            <span class="lesson-icon">
+
+                                <i
+                                    data-lucide="${icon}"
+                                    class="w-4 h-4">
+                                </i>
+
+                            </span>
+
+                            <span
+                                class="text-[13px] sm:text-sm
+                                font-medium">
+
+                                ${name}
+
+                            </span>
+
+                        </button>
+
+                    `;
+
+                }
+            );
+
+
+            card.innerHTML = `
+
+                <div
+                    class="flex items-start
+                    justify-between mb-5">
+
+                    <div class="flex gap-3">
+
+                        <div class="day-line"></div>
+
+                        <div>
+
+                            <p
+                                class="text-[11px]
+                                uppercase
+                                tracking-[.16em]
+                                font-bold"
+                                style="color:${day.color}">
+
+                                ${day.day}
+
+                            </p>
+
+                            <p
+                                class="text-xs
+                                text-slate-500
+                                mt-1">
+
+                                Haftaning ${day.number}-kuni
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="day-number">
+
+                        ${day.number}
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    class="grid
+                    grid-cols-[1fr_100px]
+                    gap-4
+                    items-end">
+
+
+                    <div class="space-y-2">
+
+                        ${lessonsHTML}
+
+                    </div>
+
+
+                    <div
+                        class="big-icon"
+                        style="--accent:${day.color}">
+
+                        <i
+                            data-lucide="${day.icon}"
+                            class="w-14 h-14">
+                        </i>
+
+                    </div>
+
+
+                </div>
+
+            `;
+
+
+            scheduleGrid.appendChild(card);
+
+        });
+
+
+
+        /* =========================================
+           LUCIDE ICONS
+        ========================================== */
+
         lucide.createIcons();
+
+
+
+        /* =========================================
+           MODAL
+        ========================================== */
+
+        const modal =
+            document.getElementById("subjectModal");
+
+        const modalCard =
+            document.getElementById("modalCard");
+
+        const modalTitle =
+            document.getElementById("modalTitle");
+
+        const modalDescription =
+            document.getElementById("modalDescription");
+
+        const modalLearn =
+            document.getElementById("modalLearn");
+
+        const modalIcon =
+            document.getElementById("modalIcon");
+
+        const closeModal =
+            document.getElementById("closeModal");
+
+        const closeModalBottom =
+            document.getElementById(
+                "closeModalBottom"
+            );
+
+
+
+        /* =========================================
+           MODAL OPEN
+        ========================================== */
+
+        function openModal(key) {
+
+            const subject =
+                subjects[key];
+
+            if (!subject) return;
+
+
+            modalTitle.textContent =
+                subject.title;
+
+            modalDescription.textContent =
+                subject.description;
+
+            modalLearn.textContent =
+                subject.learn;
+
+
+            modalIcon.style.setProperty(
+                "--modal-accent",
+                subject.color
+            );
+
+
+            modalIcon.innerHTML = `
+
+                <i
+                    data-lucide="${subject.icon}"
+                    class="w-8 h-8">
+                </i>
+
+            `;
+
+
+            modal.classList.add("active");
+
+            document.body.style.overflow =
+                "hidden";
+
+
+            lucide.createIcons();
+
+        }
+
+
+
+        /* =========================================
+           MODAL CLOSE
+        ========================================== */
+
+        function closeSubjectModal() {
+
+            modal.classList.remove("active");
+
+            document.body.style.overflow =
+                "";
+
+        }
+
+
+
+        /* =========================================
+           LESSON CLICK
+        ========================================== */
+
+        document.addEventListener(
+            "click",
+            event => {
+
+                const lesson =
+                    event.target.closest(
+                        "[data-subject]"
+                    );
+
+
+                if (!lesson) return;
+
+
+                openModal(
+                    lesson.dataset.subject
+                );
+
+            }
+        );
+
+
+
+        /* =========================================
+           CLOSE BUTTON
+        ========================================== */
+
+        closeModal.addEventListener(
+            "click",
+            closeSubjectModal
+        );
+
+        closeModalBottom.addEventListener(
+            "click",
+            closeSubjectModal
+        );
+
+
+
+        /* =========================================
+           CLICK OUTSIDE
+        ========================================== */
+
+        modal.addEventListener(
+            "click",
+            event => {
+
+                if (
+                    event.target === modal
+                ) {
+
+                    closeSubjectModal();
+
+                }
+
+            }
+        );
+
+
+
+        /* =========================================
+           ESC
+        ========================================== */
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key === "Escape" &&
+                    modal.classList.contains("active")
+                ) {
+
+                    closeSubjectModal();
+
+                }
+
+            }
+        );
+
+
     </script>
+
+</div>
 
 </body>
 
